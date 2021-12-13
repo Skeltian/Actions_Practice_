@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print a joke
-      - uses: h2floh/action-get-joke-of-the-day@v1
+        uses: h2floh/action-get-joke-of-the-day@v1
     
