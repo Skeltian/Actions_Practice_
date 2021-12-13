@@ -1,4 +1,4 @@
-name: Console Display
+name: actions - exercise 1
 
 on:
   workflow_dispatch:
