@@ -1,4 +1,4 @@
-name: Dual Jobs
+name: actions - exercise 3
 
 on:
   workflow_dispatch:
