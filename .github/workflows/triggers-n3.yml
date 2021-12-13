@@ -1,0 +1,13 @@
+name: "triggers - exercise 3" 
+# To be completed - Triggered when .yml files are modified during a pull request, except
+# for those who have a parent folder named "test"
+on:
+  pull_request:
+    paths:
+    - '**.yml'
+    - '!**/test/**.yml'
+jobs: 
+  stale: 
+    runs-on: ubuntu-latest 
+    steps: 
+    - run: echo "I'm checking the YAML files"
