@@ -1,0 +1,13 @@
+name: "triggers - exercise 2" 
+ # Triggered each time code is pushed to any branch, or when a pull request
+ # is made on the main branch.
+on:
+  push:
+  pull_request:
+    branches:
+      - 'main'
+jobs: 
+  stale: 
+    runs-on: ubuntu-latest 
+    steps: 
+    - run: echo "I check that the code compiles correctly"
