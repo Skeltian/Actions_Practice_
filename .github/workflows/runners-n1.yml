@@ -5,7 +5,7 @@ on:
 
 jobs:
   echoJob:
-    runs-on: self-hosted, windows
+    runs-on: self-hosted, Windows
     steps:
       - name: "Echo a number"
         run: echo "The number of the day is 3"
