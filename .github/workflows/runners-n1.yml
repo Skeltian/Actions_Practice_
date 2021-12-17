@@ -1,0 +1,11 @@
+name: "Local Runner Test"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echoJob:
+    runs-on: self-hosted, windows
+    steps:
+      - name: "Echo a number"
+        run: echo "The number of the day is 3"
