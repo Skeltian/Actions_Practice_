@@ -7,5 +7,8 @@ jobs:
   echoJob:
     runs-on: self-hosted
     steps:
-      - name: "Echo a number"
-        run: echo "The number of the day is 3"
+      - name: "Display files"
+        run: |
+          cd ~/;
+          ls;
+          New-Item -Path . -Name "EmptyTextFile.txt" -ItemType "file"
