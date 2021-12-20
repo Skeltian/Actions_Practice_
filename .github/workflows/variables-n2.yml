@@ -5,6 +5,7 @@ on:
 
 jobs:
   job1:
+    runs-on: ubuntu-latest
     steps:
       - name: Get current time
         uses: 1466587594/get-current-time@v2
@@ -12,6 +13,7 @@ jobs:
         with:
           format: DD/MM/YYYY
           utcOffset: "+08:00"
+          
       - name: Print current time
         env:
           TIME: "${{ steps.current-time.outputs.time }}"
