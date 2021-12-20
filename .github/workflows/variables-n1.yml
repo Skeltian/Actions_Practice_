@@ -1,0 +1,12 @@
+name: "variables - example 1"
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    env:
+      VAR1: "hello world!"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "VAR2 = $VAR1" >> $GITHUB_ENV
+      - run: echo $VAR2
