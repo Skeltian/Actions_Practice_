@@ -7,6 +7,7 @@ jobs:
   dev:
     name: "Dev"
     runs-on: ubuntu-latest
+    concurrency: "DEV"
     steps:
       - run: echo "DEV JOB"
   load-testing:
