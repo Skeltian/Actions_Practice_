@@ -1,0 +1,34 @@
+name: environments - example 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dev:
+    name: "Dev"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "DEV JOB"
+  load-testing:
+    name: "Load Testing"
+    runs-on: ubuntu-latest
+    needs: dev
+    environment:
+      name: TESTING
+    steps:
+      - run: echo "LOADTESTING JOB"
+  testing:
+    name: "Testing"
+    runs-on: ubuntu-latest
+    needs: dev
+    environment:
+      name: LOADTESTING
+    steps:
+      - run: echo "TESTING JOB"
+  prod:
+    name: "Prod"
+    runs-on: ubuntu-latest
+    needs: [load-testing, testing]
+    steps:
+      - run: echo "PROD JOB"
+    
