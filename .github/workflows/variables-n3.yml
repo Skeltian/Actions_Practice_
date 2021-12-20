@@ -9,3 +9,14 @@ jobs:
     steps:
       - name: Print github variables
         run: echo "${{ toJson(github) }}"
+        
+      - name: Print workflow name
+        run: echo "Name of workflow - ${{ github.workflow }}"
+        
+      - name: Print link to owner
+        run: echo "Link to owner of the repository - ${{ github.event.repository.owner.html_url }}"
+        
+      - name: Print alert if repo is public
+        if: ${{github.event.repository.private == 'false'}}
+        run: echo "::warning::This repo is public!"
+      
