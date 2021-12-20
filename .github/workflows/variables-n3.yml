@@ -17,6 +17,6 @@ jobs:
         run: echo "Link to owner of the repository - ${{ github.event.repository.owner.html_url }}"
         
       - name: Print alert if repo is public
-        if: ${{github.event.repository.private=='false'}}
+        if: ${{github.event.repository.private}} == 'false'
         run: echo "::warning::This repo is public!"
       
