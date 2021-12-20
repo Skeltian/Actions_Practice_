@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: dev
     environment:
-      name: TESTING
+      name: LOADTESTING
     steps:
       - run: echo "LOADTESTING JOB"
   testing:
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: dev
     environment:
-      name: LOADTESTING
+      name: TESTING
     steps:
       - run: echo "TESTING JOB"
   prod:
