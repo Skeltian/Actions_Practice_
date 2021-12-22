@@ -1,11 +1,18 @@
 name: "Demonstration on 12/23/2021"
 
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      name1:
+        description: "The 1st person's name"
+        required: false
+      name2:
+        description: "The 2nd person's name"
+        required: false
 
 jobs:
   job:
     runs-on: [self-hosted, Test]
     steps:
       - name: "Print the files in the host's directory"
-        run: |
-          echo $(D:\\CENT_\\Learning_\\Resources_\\actions-runner\\hello.sh)
+        run: echo "hello ${{inputs.name1}} and ${{inputs.name2}}!"
