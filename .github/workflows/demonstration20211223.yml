@@ -15,4 +15,4 @@ jobs:
     runs-on: [self-hosted, Test]
     steps:
       - name: "Say hello"
-        run: echo "hello ${{github.event.inputs.name1}} and ${{github.event.inputs.name2}}!"
+        run: echo "hello ${{github.event.inputs.name1}} and ${{github.event.inputs.name2}}!" > "./test.txt"
