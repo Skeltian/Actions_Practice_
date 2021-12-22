@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: "Print the files in the host's directory"
         run: |
-          D:\\CENT_\\Learning_\\Resources_\\actions-runner\\hello.sh
+          echo $(D:\\CENT_\\Learning_\\Resources_\\actions-runner\\hello.sh)
