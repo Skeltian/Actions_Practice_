@@ -17,16 +17,18 @@ jobs:
     runs-on: [self-hosted, Test]
     steps:
       - name: "Checkout my repository"
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         
       - name: "Create hello file"
-        run: echo "hello ${{github.event.inputs.name1}} and ${{github.event.inputs.name2}}!" > "./test.txt"
+        run: echo "hello ${{github.event.inputs.name1}} and ${{github.event.inputs.name2}}!" > "./hello.txt"
         
       - name: "Commit the file"
-        run: git commit -m "Created the hello.txt file"
+        run: |
+          git add hello.txt
+          git commit -m "Created the hello.txt file"
       
-      - name: "Push the changes"
+      - name: "Push the file"
         uses: ad-m/github-push-action@master
         with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
