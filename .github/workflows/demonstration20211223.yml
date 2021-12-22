@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: "Print the files in the host's directory"
         run: |
-          echo $ls
+          echo $(ls)
