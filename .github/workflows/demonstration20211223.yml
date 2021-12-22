@@ -1,0 +1,11 @@
+name: "Demonstration on 12/23/2021"
+
+on: [workflow_dispatch]
+
+jobs:
+  job:
+    runs-on: [self-hosted, Test]
+    steps:
+      - name: "Print the files in the host's directory"
+        run: |
+          echo $ls
