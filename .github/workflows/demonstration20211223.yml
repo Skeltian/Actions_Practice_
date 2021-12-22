@@ -6,13 +6,18 @@ on:
       name1:
         description: "The 1st person's name"
         required: false
+        default: "bob"
       name2:
         description: "The 2nd person's name"
         required: false
+        default: "joe"
 
 jobs:
   job:
     runs-on: [self-hosted, Test]
     steps:
+      - name: "Checkout my repository"
+        uses: actions/checkout@v1
+        
       - name: "Say hello"
         run: echo "hello ${{github.event.inputs.name1}} and ${{github.event.inputs.name2}}!" > "./test.txt"
