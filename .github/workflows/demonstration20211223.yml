@@ -14,5 +14,5 @@ jobs:
   job:
     runs-on: [self-hosted, Test]
     steps:
-      - name: "Print the files in the host's directory"
+      - name: "Say hello"
         run: echo "hello ${{inputs.name1}} and ${{inputs.name2}}!"
